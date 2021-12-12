@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include 'components/styles.html' %}
+</head>
+<body>
+
+    {% include 'components/nav.html' %}
+    
+    <section class="hero  is-fullheight login-page">
+        <div class="hero-body">
+          <div class="container">
+            <div class="columns is-centered">
+              <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+                <div class="box">
+                  <div id="login-status" class="login-status" >
+                    
+                  </div>
+                  <div class="field">
+                    <label for="" class="label">Username</label>
+                    <div class="control has-icons-left">
+                      <input id="idnumber" type="text" placeholder="Enter your username" class="input" required>
+                    </div>
+                  </div>
+                  <div class="field">
+                    <label for="" class="label">Password</label>
+                    <div class="control has-icons-left">
+                      <input id="password" type="password" placeholder="*******" class="input" required>
+                    </div>
+                  </div>
+                  <div class="field">
+                    <label for="" class="checkbox">
+                      <input type="checkbox">
+                     Remember me
+                    </label>
+                  </div>
+                  <div class="field">
+                    <button onclick="Login()" class="button is-red">
+                      Login
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+    {% include 'components/js.html' %}
+    
+</body>
+</html>

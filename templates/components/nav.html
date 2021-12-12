@@ -1,0 +1,47 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <div class="logo">
+          <img src="{{url_for('static',filename='img/logo1.png')}}" alt="ITF LOGO">
+
+      </div>
+  
+      <a onclick="navbarToggle()" role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+  
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a href="{{url_for('endpoint.index')}}" class="navbar-item">
+          Home
+        </a>
+  
+        <a class="navbar-item">
+          About us
+        </a>
+  
+        
+          <a class="navbar-item">
+            Contact us
+          </a>
+  
+      
+        </div>
+      </div>
+  
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <a href="{{url_for('endpoint.signupstaff')}}" class="button is-red">
+              <strong>Register</strong>
+            </a>
+            <a href="{{url_for('endpoint.login')}}" class="button is-blue">
+              <strong> Log in </strong>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>

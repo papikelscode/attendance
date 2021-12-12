@@ -1,0 +1,26 @@
+<table id="example" class="display" style="width:100%">
+    <thead>
+        <tr>
+            <th>S/N</th>
+            <th>Items</th>
+        
+           
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in itm %}
+        <tr>
+            <td>{{item.id}}</td>
+            <td>{{item.item_name}}</td>
+
+            
+        </tr>
+        {% endfor %}
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>S/N</th>
+            <th>Items</th>
+        </tr>
+    </tfoot>
+</table>

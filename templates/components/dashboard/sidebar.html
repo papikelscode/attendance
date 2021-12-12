@@ -1,0 +1,25 @@
+<nav class="sidebar">
+    <a style="margin-top: 5rem;" href="{{url_for('endpoint.dashboard')}}">
+        Dashboard
+        <i class='bx bxs-dashboard'></i>
+    </a>
+    <a id="clock_button" onclick="ModalHandler('myModal')">
+        Attendance
+        <i class='bx bx-alarm-add'></i>
+    </a>
+
+    <a href="{{url_for('endpoint.invite')}}">
+        Invite
+        <i class='bx bx-book-add'></i>
+    </a>
+
+    <a href="{{url_for('endpoint.settings')}}">
+        Settings
+        <i class='bx bx-cog'></i>
+    </a>
+
+    <a href="{{url_for('endpoint.logout')}}">
+        Logout
+        <i class='bx bx-door-open'></i>
+    </a>
+</nav>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include 'components/styles.html' %}
+    <title>Document</title>
+</head>
+<body>
+
+    {% include 'components/nav.html' %}
+          <br>
+    {% include 'components/flash.html' %}
+        <br>
+<section class="hero  is-fullheight login-page">
+<form action="/createUser" method="POST" enctype="multipart/form-data">
+<div id="app">
+    <div class="section all-text">
+      <div class="container">
+        
+        <div class="parent">
+        <div class="title sign-up" style="color: white;">Sign Up</div>
+      </div>
+        <form action="/createUser" method="POST" id="register-form form-field">
+          <div class="columns is-centered">
+            <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+              <div class="box">
+          <div class="box detail-box">
+          <div class="field">
+            <label class="label"  for="FirstName">First Name</label>
+                <div class="control">
+                  <input class="input" type="text" placeholder="First Name" name="fname"/>
+                </div>
+                <label class="label"  for="LastName">Last Name</label>
+                <div class="control">
+                  <input class="input" type="text" placeholder="Last Name" name="lname"/>
+                </div>
+                <label class="label"  for="phone number">Phone Number</label>
+                <div class="control">
+                  <input class="input" type="number" placeholder="Your Phone Number" name="phone"/>
+                </div>
+                <label class="label"  for="email">Email</label>
+            <div class="control">
+              <input class="input" type="email" placeholder="Your Email" name="email"/>
+            </div>
+            <label class="label"  for="staff ID">Staff ID</label>
+            <div class="control">
+              <input class="input" type="text" name="idnumber" placeholder="Your staff ID">
+            </div>
+            <label class="label"  for="password">Password</label>
+            <div class="control">
+              <input class="input" type="password" name="password" placeholder="Password">
+            </div>
+            <label class="label"  for="picture">Upload Picture</label>
+            <div class="control">
+              <input class="input" type="file" name="pic" placeholder="Upload Picture">
+            </div>
+            
+
+            
+            
+            
+          </div>
+        
+          <div class="field is-grouped btn-div">
+            <div class="control">
+              <button class="button is-medium is-red" type="submit">Register</button>
+            </div>
+          </div>
+        </div>
+
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+</div>
+
+</div>
+</section>
+  {% include 'components/js.html' %}
+</body>
+</html>

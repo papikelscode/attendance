@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include 'components/styles.html' %}
+</head>
+<body>
+
+    {% include 'components/dashboard/nav.html' %}
+
+
+    {% include 'components/dashboard/sidebar.html' %}
+
+    <div  class="dash-container">
+          <div class="container">
+            <div class="card">
+           
+                <div class="card-content">
+                  <div class="content">
+                    <div class="profile-container">
+                        <img src="{{url_for('static',filename='userspic/')}}{{current_user.picture}}" alt="" srcset="">
+                    
+                          <div class="login-input-container">
+                              <i class='bx bx-user-circle'></i>
+                              <input disabled type="text" placeholder="{{current_user.first_name}}  {{current_user.last_name}}">
+                          </div>
+
+
+                          <div class="login-input-container">
+                            <i class='bx bx-envelope' ></i>
+                            <input disabled type="text" placeholder="{{current_user.email}}">
+                        </div>
+
+                        
+                        <div class="login-input-container">
+                            <i class='bx bxs-phone' ></i>
+                            <input disabled type="text" placeholder="{{current_user.phone}}">
+                        </div>
+
+
+                               
+                        <div class="login-input-container">
+                            <i class='bx bx-bookmark-plus' ></i>
+                            <input disabled type="text" placeholder="{{current_user.IDnumber}}">
+                        </div>
+
+
+                        <h2 class="title" style="text-align: center;">Update password</h2>
+                        
+                         
+                        <div class="login-input-container">
+                            <i class='bx bx-key' ></i>
+                            <input id="currentpassword"  type="text" placeholder="Current password">
+                        </div>
+
+
+                               
+                        <div class="login-input-container">
+                            <i class='bx bx-key' ></i>
+                            <input id="password" type="text" placeholder="New password">
+                        </div>
+
+                        <div class="login-input-container">
+                            <i class='bx bx-key' ></i>
+                            <input id="conpassword" type="text" placeholder="Confirm new password">
+                        </div>
+
+                        <br>
+                        <button onclick="ChangePasword()" class="button is-danger is-medium"> Update password</button>
+
+                      </div>
+                  </div>
+                </div>
+               
+              </div>
+              
+          </div>
+    </div>
+    
+
+    {% include 'components/js.html' %}
+
+</body>
+</html>

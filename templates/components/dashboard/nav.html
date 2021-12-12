@@ -1,0 +1,13 @@
+<nav class="dash-nav">
+    <div class="dash-logo">
+        <img src="{{url_for('static',filename='img/logo1.png')}}" alt="">
+    </div>
+    <div class="profilepic">
+        {% if current_user.picture %}
+        <img src="{{url_for('static',filename='userspic/')}}{{current_user.picture}}" alt="">
+        {% else %}
+        <i class='bx bx-user-circle user-i' ></i>
+        {% endif %}
+        {{current_user.first_name}} {{current_user.last_name}}
+    </div>
+</nav>

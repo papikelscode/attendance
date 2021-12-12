@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include 'components/styles.html' %}
+</head>
+<body>
+    {% include 'components/dashboard/nav.html' %}
+    {% include 'components/dashboard/sidebar.html' %}
+    <div class="container">
+      <div class="dash-container">
+        {% if not current_user.can_create %}
+        <div class="columns">
+          <div class="column">
+            <div class="card">
+              <div class="card-content">
+                <div class="content">
+                  <div class="has-text-centered">
+                    <h1 class="title"> Total time in</h1>
+                    <h4 class="subtitle">{{timein}}</h4>
+                  </div>
+                </div>
+              </div>
+  
+            </div>
+  
+          </div>
+          <div class="column">
+            <div class="card">
+  
+              <div class="card-content">
+                <div class="content">
+                  <div class="has-text-centered">
+                    <h1 class="title"> Total time Out</h1>
+                    <h4 class="subtitle">{{timeout}}</h4>
+                  </div>
+                </div>
+              </div>
+  
+            </div>
+  
+          </div>
+          <div class="column">
+            <div class="card">
+  
+              <div class="card-content">
+                <div class="content">
+                  <div class="has-text-centered">
+                    <h1 class="title"> Total Attendance</h1>
+                    <h4 class="subtitle">{{total_attendance}}</h4>
+                  </div>
+                </div>
+              </div>
+  
+            </div>
+  
+          </div>
+        </div>
+        {%  else  %}
+            {% if current_user.is_admin  %}
+            <div class="columns">
+              <div class="column">
+                <div class="card">
+                  <div class="card-content">
+                    <div class="content">
+                      <div class="has-text-centered">
+                        <h1 class="title">Staff present</h1>
+                        <h4 class="subtitle">{{total_staff}}</h4>
+                      </div>
+                    </div>
+                  </div>
+  
+                </div>
+  
+              </div>
+              <div class="column">
+                <div class="card">
+  
+                  <div class="card-content">
+                    <div class="content">
+                      <div class="has-text-centered">
+                        <h1 class="title"></h1>
+                        <h4 class="subtitle">{{timeout}}</h4>
+                      </div>
+                    </div>
+                  </div>
+  
+                </div>
+  
+              </div>
+              <div class="column">
+                <div class="card">
+  
+                  <div class="card-content">
+                    <div class="content">
+                      <div class="has-text-centered">
+                        <h1 class="title">Active staff</h1>
+                        <h4 class="subtitle">{{total_attendance}}</h4>
+                      </div>
+                    </div>
+                  </div>
+  
+                </div>
+  
+              </div>
+  
+  
+  
+              <div class="column">
+                <div class="card">
+  
+                  <div class="card-content">
+                    <div class="content">
+                      <div class="has-text-centered">
+                        <h1 class="title">Inactive staff</h1>
+                        <h4 class="subtitle">{{total_attendance}}</h4>
+                      </div>
+                    </div>
+                  </div>
+  
+                </div>
+  
+              </div>
+  
+  
+              <div class="column">
+                <div class="card">
+  
+                  <div class="card-content">
+                    <div class="content">
+                      <div class="has-text-centered">
+                        <h1 class="title">Available items</h1>
+                        <h4 class="subtitle">{{total_attendance}}</h4>
+                      </div>
+                    </div>
+                  </div>
+  
+                </div>
+  
+              </div>
+  
+  
+              <div class="column">
+                <div class="card">
+  
+                  <div class="card-content">
+                    <div class="content">
+                      <div class="has-text-centered">
+                        <h1 class="title">Unavailable Items</h1>
+                        <h4 class="subtitle">{{total_attendance}}</h4>
+                      </div>
+                    </div>
+                  </div>
+  
+                </div>
+  
+              </div>
+            </div>
+            {% endif %}
+  
+  
+  
+            <div class="columns">
+            
+      
+              <div class="column">
+                <div class="card">
+  
+                  <div class="card-content">
+                    <div class="content">
+                      <div class="has-text-centered">
+                        <h1 class="title">Total visitor</h1>
+                        <h4 class="subtitle">{{total_visitor}}</h4>
+                      </div>
+                    </div>
+                  </div>
+  
+                </div>
+  
+              </div>
+  
+  
+  
+              <div class="column">
+                <div class="card">
+  
+                  <div class="card-content">
+                    <div class="content">
+                      <div class="has-text-centered">
+                        <h1 class="title">Current Visitors</h1>
+                        <h4 class="subtitle">{{current_visitor}}</h4>
+                      </div>
+                    </div>
+                  </div>
+  
+                </div>
+  
+              </div>
+  
+  
+              <div class="column">
+                <div class="card">
+  
+                  <div class="card-content">
+                    <div class="content">
+                      <div class="has-text-centered">
+                        <h1 class="title">Visitors left</h1>
+                        <h4 class="subtitle">{{unavail}}</h4>
+                      </div>
+                    </div>
+                  </div>
+  
+                </div>
+  
+              </div>
+  
+  
+              <div class="column">
+                <div class="card">
+  
+                  <div class="card-content">
+                    <div class="content">
+                      <div class="has-text-centered">
+                        <h1 class="title">Expected visitors</h1>
+                        <h4 class="subtitle">{{expected_visitors}}</h4>
+                      </div>
+                    </div>
+                  </div>
+  
+                </div>
+  
+              </div>
+            </div>
+  
+        {%  endif %}
+  
+  
+          <br>
+          {% include 'components/flash.html' %}
+          <br>
+  
+  
+          {%  if current_user.can_create %}
+          <div class="card">
+            <div class="card-content">
+                <table id="example" class="display" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Phone Number</th>
+                            <th>Email</th>
+                            <th>Invite code</th>
+                            {% if current_user.can_create %}
+                            <th>luggages</th>
+                            {% endif %}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for visitor in myinvites %}
+                        <tr>
+                            <td>{{visitor.first_name}}</td>
+                            <td>{{visitor.last_name}}</td>
+                            <td>{{visitor.phone}}</td>
+                            <td>{{visitor.email}}</td>
+                            <td>{{visitor.inviteCode}}</td>
+                            {% if current_user.can_create %}
+                            <td>
+                               <div style="display: flex; flex-direction:column; gap:1rem;">
+                                    {%  if not visitor.timein %}
+                                    <button onclick="ClockVisitor('{{visitor.inviteCode}}')" class="button is-primary is-small">Clock  in</button>
+                                    {%  else %}
+                                      {%  if visitor.timeout  %}
+                                      <button disabled onclick="ClockVisitor('{{visitor.inviteCode}}')" class="button is-danger is-small">Clock  Out</button>
+  
+                                      {%  else %}
+                                      <button onclick="ClockVisitor('{{visitor.inviteCode}}')" class="button is-danger is-small">Clock  Out</button>
+  
+                                      {%  endif %}
+                                    {% endif %}
+                                  
+                                    {% if visitor.timeout  %}
+  
+                                      <button disabled onclick="AddItemModal('itemsbyvisitors','{{visitor.inviteCode}}')" class="button is-warning is-small">Add items</button>
+  
+                                    {%  else  %}
+                                         <button onclick="  AddItemModal('itemsbyvisitors','{{visitor.inviteCode}}')" class="button is-warning is-small">Add items</button>
+  
+                                    {% endif  %}
+                                
+                                <button onclick="  ShowItem('{{visitor.id}}')" class="button is-warning is-small">View items</button>
+  
+  
+                               </div>
+                            </td>
+                            {% endif %}
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Phone Number</th>
+                            <th>Email</th>
+                            
+                            <th>Invite code</th>
+                            {% if current_user.can_create %}
+                            <th>luggages</th>
+                            {% endif %}
+  
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+          </div>
+  
+            {%  else  %}
+              <div class="card">
+                <div class="card-content">
+                  <table id="example" class="display" style="width:100%">
+                    <thead>
+                      <tr>
+                        <th>Time in</th>
+                        <th>Time out</th>
+                        <th>Action</th>
+  
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for attendance in user_attendance %}
+                      <tr>
+                        <td>{{attendance.timein}}</td>
+                        <td>{{attendance.timeout}}</td>
+                        <td>
+                          {% if attendance.timeout == None %}
+                          <button class="button is-danger is-small">Report</button>
+                          {% else %}
+                          <button disabled class="button is-danger is-small" disable>Report</button>
+                          {% endif %}
+                        </td>
+                      </tr>
+                      {% endfor %}
+                    </tbody>
+                    <tfoot>
+                      <tr>
+                        <th>Time in</th>
+                        <th>Time out</th>
+                        <th>Action</th>
+  
+                      </tr>
+                    </tfoot>
+                  </table>
+                </div>
+              </div>
+          {% endif %}
+          
+  
+  
+  
+      </div>
+    </div>
+    <div id="myModal" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+          <header class="modal-card-head is-red" >
+            <p class="modal-card-title" style="color:white;">ATTENDANCE</p>
+            <button onclick="ModalHandler('myModal')" class="delete" aria-label="close"></button>
+          </header>
+          <section class="modal-card-body is-cetd">
+            <div id="response" class="response">
+                        
+            </div>
+            <div class="input-data">
+              <div id="enter-id">
+                ENTER USER-ID
+               </div>
+               <div id="response" class="response">
+                </div>
+              <input id="staffID" class="input" type="text" placeholder="USER_ID" > <br> 
+              <div class="clock-btn">
+              <button id="user_id" onclick="ClockIn()" class="button is-red in-button">CLOCK IN</button>
+              <button onclick="ClockOut()" class="button is-blue in-button">CLOCK OUT</button>
+              </div>
+              <br>
+              CLICK FOR FACE ID   
+              <div class="face-id">
+                    
+                    <a href="">
+                        <img src="{{url_for('static',filename='img/face_id.svg')}}"alt="">
+                    </a>
+                </div>
+          </div>
+            <!-- Content ... -->
+          </section>
+          <footer class="modal-card-foot" style="background-color: #06213F;">
+            <button id="modalclose" onclick="ModalHandler('myModal')" class="button">Cancel</button>
+          </footer>
+        </div>
+      </div>
+    
+    
+    
+    
+    
+    {% include 'components/js.html' %} 
+
+    
+</body>
+</html>
